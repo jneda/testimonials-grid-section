@@ -1,0 +1,131 @@
+:root {
+  --violet: hsl(266, 55%, 52%);
+  --dark-grayish-blue: hsl(217, 19%, 35%);
+  --dark-blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+
+  --body-copy-font-size: 13px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background: var(--light-grayish-blue);
+  font-size: var(--body-copy-font-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100svh;
+}
+
+section.testimonials {
+  padding: 1rem;
+  margin: 2rem 0;
+}
+
+article {
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 1.4rem 0;
+}
+
+article.blackish-blue {
+  background-color: var(--dark-blackish-blue);
+  color: var(--white);
+}
+
+article.grayish-blue {
+  background: var(--dark-grayish-blue);
+  color: var(--white);
+}
+
+article.violet {
+  background: var(--violet);
+  color: var(--white);
+}
+
+article.white {
+  background: var(--white);
+  color: var(--dark-grayish-blue);
+}
+
+article .author-details {
+  display: flex;
+  gap: 1.4rem;
+}
+
+article .author-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+article .avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+article .author-name {
+  font-size: 1.2em;
+}
+
+article .author-status {
+  opacity: 50%;
+}
+
+article h1 {
+  font-size: 1.5em;
+  line-height: 1.3;
+}
+
+article p {
+  opacity: 70%;
+  line-height: 1.5;
+}
+
+@media screen and (min-width: 376px) {
+  section.testimonials {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-areas: 
+      "a a b e"
+      "c d d e";
+    gap: 1.4rem;
+  }
+
+  section article {
+    margin: 0;
+  }
+
+  section article:nth-of-type(1) {
+    grid-area: a;
+  }
+
+  section article:nth-of-type(2) {
+    grid-area: b;
+  }
+
+  section article:nth-of-type(3) {
+    grid-area: c;
+  }
+
+  section article:nth-of-type(4) {
+    grid-area: d;
+  }
+
+  section article:nth-of-type(5) {
+    grid-area: e;
+  }
+}
